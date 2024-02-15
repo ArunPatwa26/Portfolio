@@ -81,8 +81,8 @@
       </div>
     </div>
     <div style="">
-      <div style="display: inline-block;  margin: 14% 115px; "><img src="assets/logo2.jpg" alt=""  height="350px" width="400px"/></div>
-       <div style="display: inline-block;  margin: -35% 12% ; float: right;">
+      <div style="display: inline-block;  margin: 10% 115px; "><img src="assets/logo2.jpg" alt=""  height="350px" width="400px"/></div>
+       <div style="display: inline-block;  margin: -31% 12% ; float: right;">
           <h5 style="margin: 24px 0px;">ABOUT ME</h5>
           <h1 style="margin: 23px 0px;">PERSONAL DETAILS</h1>
           <p>
@@ -99,19 +99,31 @@
             font-size: 15px;">VIEW FULL DETAILS</a></h3>
         </div>
       </div >
-      <div style=" margin-top: -10px;"><div style="text-align: center;"><h1>My Offered Services</h1>
-      <p>At about this time of year, some months after New Year’s resolutions have been made and <br>
+      <div style=" margin-top: -10px; background-color: #F8F8FF	;"><div style="text-align: center;"><h1>My Offered Services</h1>
+       <p>At about this time of year, some months after New Year’s resolutions have been made and <br>
          kept, or made and neglected.</p></div>
-        <div style="display:  flex; flex-direction: column; margin: 80px 10px; align-items: center">
+        <div style="display:  flex; flex-direction: column; margin: 50px 10px; align-items: center">
          <div style=" display: flex; justify-content: space-between; width:1100px ; ">
 
-        <div style=" text-align: center;" ><img src="/assets/one.png" alt="" height="78px" width="80px"  ><h2>Web Design</h2><p style="padding: 0px 8px;">“It is not because things are difficult that we do not dare; it is because we do not dare that they are difficult.”</p></div>
-        <div style=" text-align: center; padding: 8px 0px;"><img src="assets/two.png" alt="" height="70px" width="80px" ><h2>Web Devlopment</h2><p style="padding: 0px 8px;">If you are an entrepreneur, you know that your success cannot depend on the opinions of others. Like the wind, opinions.</p></div>
-        <div style=" text-align: center; padding: 8px 0px;"><img src="assets/three.png" alt="" height="70px" width="80px" ><h2>Photography</h2><p style="padding: 0px 8px;">Do you want to be even more successful?  Learn to love learning and growth. The more effort you put into improving your skills.</p></div></div>
+        <div style=" text-align: center;" ><img src="/assets/one.png" alt="" height="78px" width="80px"  ><h2>Web Design</h2><p style="padding: 0px 12px;">“It is not because things are difficult that we do not dare; it is because we do not dare that they are difficult.”</p></div>
+        <div style=" text-align: center; padding: 8px 0px;"><img src="assets/two.png" alt="" height="70px" width="80px" ><h2>Web Devlopment</h2><p style="padding: 0px 12px;">If you are an entrepreneur, you know that your success cannot depend on the opinions of others. Like the wind, opinions.</p></div>
+        <div style=" text-align: center; padding: 8px 0px;"><img src="assets/three.png" alt="" height="70px" width="80px" ><h2>Photography</h2><p style="padding: 0px 12px;">Do you want to be even more successful?  Learn to love learning and growth. The more effort you put into improving your skills.</p></div></div>
         <div style=" display: flex; justify-content: space-between; width: 1100px;">
-        <div style=" text-align: center; padding: 8px 0px;"><img src="assets/four.png" alt="" height="70px" width="80px" ><h2>Clipping Path</h2><p style="padding: 0px 8px;">Hypnosis quit smoking methods you maintain cau medical world over the last two decades. There is a lot of argument.</p></div>
-        <div style=" text-align: center; padding: 8px 0px;"><img src="assets/five.png" alt="" height="70px" width="90px" ><h2>Apps Interface</h2><p style="padding: 0px 8px;">Do you sometimes have the feeling that are and you’re running into the same obstacles over and over again? Many of my conflicts.</p></div>
-        <div style=" text-align: center; padding: 8px 0px;"><img src="assets/six.png" alt="" height="70px" width="80px" ><h2>Graphic Designer</h2><p s>You’ve heard the expression, “Just believe it and it will come.” Well, technically, that is true, however, ‘believing’ is not just thinking that.</p></div></div></div>
+        <div style=" text-align: center; padding: 8px 0px;"><img src="assets/four.png" alt="" height="70px" width="80px" ><h2>Clipping Path</h2><p style="padding: 0px 12px;">Hypnosis quit smoking methods you maintain cau medical world over the last two decades. There is a lot of argument.</p></div>
+        <div style=" text-align: center; padding: 8px 0px;"><img src="assets/five.png" alt="" height="70px" width="90px" ><h2>Apps Interface</h2><p style="padding: 0px 12px;">Do you sometimes have the feeling that are and you’re running into the same obstacles over and over again? Many of my conflicts.</p></div>
+        <div style=" text-align: center; padding: 8px 0px;"><img src="assets/six.png" alt="" height="70px" width="80px" ><h2>Graphic Designer</h2><p style="padding: 0px 12px;" >You’ve heard the expression, “Just believe it and it will come.” Well, technically, that is true, however, ‘believing’ is not just thinking that.</p></div></div></div>
       </div>
+      <div>
+        <button onclick="dark()">Dark Mode</button>
+        <button onclick="light()">Light Mode</button>
+      </div>
+      <script>
+        function dark(){
+          document.querySelector('html').style.colorScheme='dark'
+        }
+        function light(){
+          document.querySelector('html').style.colorScheme='light'
+        }
+      </script>
       </body>
 </html>
