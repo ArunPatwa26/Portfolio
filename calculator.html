@@ -9,27 +9,56 @@
     <h1>Calculator</h1>
 
     <script>
+        
+        console.log(value);
         function add(value1,value2){
-            console.log("Addition of Two Number is: "+(value1+value2));
+          return "Addition of Two Number is: "+ (value1+value2);
+    
         }
         function substract(value1,value2){
-            console.log("Substraction of Two Number is: "+(value1-value2));
+           return "Substraction of Two Number is: "+ (value1-value2);
+        
         }
         function multiply(value1,value2){
-            console.log("multiplication of Two Number is: "+(value1*value2));
+           return "multiplication of Two Number is: "+value1*value2;
+           
         }
         function divide(value1,value2){
-            console.log("Division of Two Number is: "+(value1/value2));
+            return "Division of Two Number is: "+value1/value2;
         }
         function modulus(value1,value2){
-            console.log("Division of Two Number is: "+(value1/value2));
+            return "Division of Two Number is: "+value1/value2;
         }
+            // cheack the type of variable 
+            // typeof()
 
-        add(1085,20886);
-        substract(1960,27970);
-        multiply(108087,2080879);
-        divide(20896986,29);
-        modulus(10086866,4);
+            // input by ser
+            // prompt()
+
+            // use for converting a datatype of data
+            // parseFloat()
+            // parseInt()
+            // toString
+
+            
+
+        var value1=prompt("Enter a First Value");
+        a=parseInt(value1);
+        var value2=prompt("Enter a Second Value");
+        b=parseInt(value2);
+        // console.log(typeof(value1));
+        // console.log(typeof(value2));
+        let x=add(a,b);
+        console.log(x);
+        let y=substract(1960,27970);
+        console.log(y)
+        let c=multiply(108087,2080879);
+        console.log(c)
+        let d=divide(20896986,29);
+        console.log(d)
+        let e=modulus(10086866,4);
+        console.log(e)
+        // hoisting  in hoistig we can define variable anywhere and console it anywhere but we can't initialize value  anywhere
     </script>
 </body>
 </html>
