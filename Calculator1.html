@@ -11,64 +11,85 @@
              width: 55px; 
              height: 50px;
               padding: 5px 5px; 
-              margin: 12px 14px;
+              margin: 16px 20px;
               font-family:'Times New Roman', Times, serif;
-              /* background-color: gray; */
+              background-color: gray;
+              border-radius: 50px;
               /* color: white; */
-              font-size: 25px;
+              font-size: 20px;
               border: none;
               background-color: #fff;
-              background: transparent;
+              /* background: transparent; */
+              background-color: gray;
+              color: white;
               /* box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.1); */
         }
         body{
             display: flex;
             justify-content: center;
             margin: 5% 0px;
-            background: linear-gradient(55deg, #b1e9e7, #7099d2);
+            /* background: linear-gradient(55deg, #b1e9e7, #7099d2); */
             
         }
         
     </style>
 </head>
 <body >
-    <div style="  ">
-        <div><input type="text" placeholder="0"  style="width: 330px; height: 150px;   box-shadow: 0px 0px 12px 4px rgb(0, 0, 0) ;
+    <div >
+    <div style=" border: 2px solid black; width: 360px; height: 160px; padding: 20px 30px;  ">
+        <div><input type="text" placeholder="0" id="inputvalue" style="width: 330px; height: 150px;   box-shadow: 0px 0px 12px 4px rgb(0, 0, 0) ;
      margin: 4px 0px; font-size: 40px; cursor: pointer; color: black; text-align: right; padding: 0px 15px;"></div>
-        <div >
-            <button style=" color: red;">AC</button>
-             <button style=" color: red;">DEL</button>
-             <button style=" color: red;">%</button>
-             <button style=" color: red;">/</button>    
-        </div>
-        <div>
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
-            <button style=" color: red;">*</button>
-        </div>
-        <div>
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button style=" color: red;">-</button>
-        </div>
-        <div>
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button style=" color: red;">+</button>
+     </div>
+     
 
+         <div >
+             <button style=" color: white; background-color: black;" onclick="Cancel()">AC</button>
+             <button style=" color: white; background-color: black">DEL</button>
+             <button style=" color: white; background-color: black;">%</button>
+             <button style=" color: white; background-color: orange;">/</button>    
+            </div>
+            <div>
+                <button onclick="addtodisplay('7')">7</button>
+                <button onclick="addtodisplay('8')">8</button>
+                <button onclick="addtodisplay('9')">9</button>
+                <button style="color: white; background-color: orange;">*</button>
+            </div>
+            <div>
+                <button onclick="addtodisplay('4')" >4</button>
+                <button onclick="addtodisplay('5')">5</button>
+                <button onclick="addtodisplay('6')">6</button>
+                <button style=" color: white; background-color: orange;">-</button>
+            </div>
+            <div>
+                <button onclick="addtodisplay('1')">1</button>
+                <button onclick="addtodisplay('2')">2</button>
+                <button onclick="addtodisplay('3')">3</button>
+                <button style=" color: white; background-color: orange;">+</button>
+                
+            </div>
+            <div>
+                <button onclick="addtodisplay('00')">00</button>
+                <button onclick="addtodisplay('0')">0</button>
+                <button>.</button>
+                <button style=" color: white; background-color: orange;" onclick="result()" >=</button>
+            </div>
         </div>
-        <div>
-            <button>00</button>
-            <button>0</button>
-            <button>.</button>
-            <button style=" color: red;" >=</button>
-        </div>
-    </div>
-    <script>
-       
+        
+        <script>
+            var input =document.getElementById("inputvalue")
+
+            function addtodisplay(value){
+                input.value =value
+                console.log("value"+value)
+            }
+
+            function Cancel(){
+                input.value=""
+            }
+
+       function result(){
+        console.log("result");
+       }
     </script>
 </body>
 </html>
