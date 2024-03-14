@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Radio</title>
+    <style>
+        /* Container styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.5s ease-out; /* Fade in animation */
+        }
+
+        /* Input section styles */
+        .input-section {
+            margin-bottom: 20px;
+            animation: slideInLeft 0.5s ease-out; /* Slide in from left animation */
+        }
+        .input-section input[type="text"],
+        .input-section input[type="email"],
+        .input-section input[type="tel"],
+        .input-section input[type="radio"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        .input-section input[type="radio"] {
+            width: auto;
+            margin-right: 10px;
+        }
+
+        /* Button styles */
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Display section styles */
+        .display-section {
+            margin-top: 20px;
+            animation: slideInRight 0.5s ease-out; /* Slide in from right animation */
+        }
+        .display-section h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        /* Item count section styles */
+        .item-count {
+            display: flex;
+            align-items: center;
+            animation: slideInLeft 0.5s ease-out; /* Slide in from left animation */
+        }
+        .item-count img {
+            margin-right: 10px;
+            width: 50px;
+            height: auto;
+        }
+
+        /* User info display styles */
+        .user-info-display h2 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            animation: slideInRight 0.5s ease-out; /* Slide in from right animation */
+        }
+
+        /* Keyframe animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Additional styling for aesthetics */
+        h1 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+        .container {
+            background-color: #f9f9f9;
+            border: 2px solid #007bff;
+        }
+        .input-section, .display-section, .user-info-display {
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+        }
+        .input-section input[type="text"], 
+        .input-section input[type="email"], 
+        .input-section input[type="tel"], 
+        .input-section input[type="radio"] {
+            border: 1px solid #007bff;
+            transition: border-color 0.3s;
+        }
+        .input-section input[type="text"]:focus, 
+        .input-section input[type="email"]:focus, 
+        .input-section input[type="tel"]:focus, 
+        .input-section input[type="radio"]:focus {
+            border-color: #0056b3;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 600px) {
+            .container {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Advanced Radio Form</h1>
+        <div class="input-section">
+            <h2>Select a Number: <span id="value"></span></h2>
+            <button class="button" onclick="selectNumber(1)">1</button>
+            <button class="button" onclick="selectNumber(2)">2</button>
+            <button class="button" onclick="selectNumber(3)">3</button>
+            <button class="button" onclick="selectNumber(4)">4</button>
+            <button class="button" onclick="selectNumber(5)">5</button>
+            <button class="button" onclick="selectNumber(6)">6</button>
+            <button class="button" onclick="selectNumber(7)">7</button>
+            <button class="button" onclick="selectNumber(8)">8</button>
+            <button class="button" onclick="selectNumber(9)">9</button>
+            <button class="button" onclick="selectNumber(10)">10</button>
+        </div>
+
+        <div class="input-section">
+            <h2>Select a State: <span id="input"></span></h2>
+            <input type="radio" name="state" onclick="selectState('Maharashtra')"> Maharashtra
+            <input type="radio" name="state" onclick="selectState('Mumbai')"> Mumbai
+            <input type="radio" name="state" onclick="selectState('Delhi')"> Delhi
+            <input type="radio" name="state" onclick="selectState('Bhutan')"> Bhutan
+        </div>
+
+        <div class="display-section">
+            <div class="item-count">
+                <img src="one.jpg" alt="iPhone">
+                <h2>Items: <span id="itemCount">0</span></h2>
+                <button class="button" onclick="decrementItemCount()">-</button>
+                <button class="button" onclick="incrementItemCount()">+</button>
+            </div>
+        </div>
+
+        <div class="input-section user-info-display">
+            <h2>Login</h2>
+            <input type="text" name="name" id="name" placeholder="Name">
+            <input type="email" name="email" id="email" placeholder="Email">
+            <input type="tel" name="phonenumber" id="phonenumber" placeholder="Phone Number">
+            <input type="text" name="state" id="state" placeholder="State">
+            <button class="button" onclick="submit()">Submit</button>
+            <div>
+                <h2>User Information:</h2>
+                <h2>Name: <span id="name1"></span></h2>
+                <h2>Email: <span id="email1"></span></h2>
+                <h2>Phone Number: <span id="pn"></span></h2>
+                <h2>State: <span id="state1"></span></h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript code -->
+    <script>
+        // JavaScript functions remain unchanged 
+        function submit(){
+            var n1=document.getElementById("name").value
+            var n2=document.getElementById("email").value
+            var n3=document.getElementById("phonenumber").value
+            var n4=document.getElementById("state").value
+
+            var i1=document.getElementById("name1")
+            var i2=document.getElementById("email1")
+            var i3=document.getElementById("pn")
+            var i4=document.getElementById("state1")
+            i1.innerText=n1;
+            i2.textContent=n2;
+            i3.textContent=n3;
+            i4.textContent=n4;
+
+        }
+        var input =document.getElementById("value")
+        function selectNumber(value){
+            input.innerHTML=value;
+    
+        }
+        var value=document.getElementById("input")
+
+        function selectState(name){
+            value.innerHTML=name
+
+        }
+        var item =document.getElementById("itemCount");
+        function incrementItemCount(){
+            item.innerHTML++
+        }
+        function decrementItemCount(){
+            item.innerHTML--
+        }
+    </script>
+</body>
+</html>
