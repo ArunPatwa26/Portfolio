@@ -27,8 +27,8 @@
         body{
             display: flex;
             justify-content: center;
-            margin: 5% 0px;
-            /* background: linear-gradient(55deg, #b1e9e7, #7099d2); */
+            margin: 3% 0px;
+            background: linear-gradient(184deg, #ffffff, black);
             
         }
         
@@ -44,27 +44,27 @@
 
          <div >
              <button style=" color: white; background-color: black;" onclick="Cancel()">AC</button>
-             <button style=" color: white; background-color: black">DEL</button>
-             <button style=" color: white; background-color: black;">%</button>
-             <button style=" color: white; background-color: orange;">/</button>    
+             <button style=" color: white; background-color: black" onclick="Delete()">DEL</button>
+             <button style=" color: white; background-color: black;" onclick="symbols('%')">%</button>
+             <button style=" color: white; background-color: orange;" onclick="symbols('/')">/</button>    
             </div>
             <div>
                 <button onclick="addtodisplay('7')">7</button>
                 <button onclick="addtodisplay('8')">8</button>
                 <button onclick="addtodisplay('9')">9</button>
-                <button style="color: white; background-color: orange;">*</button>
+                <button style="color: white; background-color: orange;" onclick="symbols('*')">*</button>
             </div>
             <div>
                 <button onclick="addtodisplay('4')" >4</button>
                 <button onclick="addtodisplay('5')">5</button>
                 <button onclick="addtodisplay('6')">6</button>
-                <button style=" color: white; background-color: orange;">-</button>
+                <button style=" color: white; background-color: orange;" onclick="symbols('-')">-</button>
             </div>
             <div>
                 <button onclick="addtodisplay('1')">1</button>
                 <button onclick="addtodisplay('2')">2</button>
                 <button onclick="addtodisplay('3')">3</button>
-                <button style=" color: white; background-color: orange;">+</button>
+                <button style=" color: white; background-color: orange;" onclick="symbols('+')">+</button>
                 
             </div>
             <div>
@@ -79,17 +79,28 @@
             var input =document.getElementById("inputvalue")
 
             function addtodisplay(value){
-                input.value =value
+                input.value +=value
                 console.log("value"+value)
             }
 
             function Cancel(){
-                input.value=""
+                input.value="";
+            }
+            function symbols(value){
+                input.value +=value
+            
+            }
+            function Delete(){
+                input.value=input.value.slice(0, -1)
             }
 
-       function result(){
-        console.log("result");
-       }
+            function result() {
+               
+
+                    input.value = eval(input.value);
+               
+            
+        }
     </script>
 </body>
 </html>
